@@ -27,6 +27,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+      - name: setup requests
+        run: |
+          pip install - U requests
+      - name: setup pip
+        run: |
+          pip install -U pytest
       - name: execute py script # run the run.py to get the latest data
         run: |
           python apitest.py
